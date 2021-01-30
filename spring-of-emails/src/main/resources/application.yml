@@ -1,0 +1,21 @@
+app:
+  url-fetch-retry-count: 3
+  batch-timeout-minutes: 1
+
+spring:
+  application.name: spring-emails
+  datasource:
+    url: jdbc:postgresql://postgres:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    username: "postgres"
+    password: "password"
+    maximum-pool-size: 3
+    minimum-idle: 3
+    max-lifetime: 1_800_000
+    leak-detection-threshold: 0
+
+server:
+  port: 8080
+  servlet.context-path: /SpringOfEmails
+

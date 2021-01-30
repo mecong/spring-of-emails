@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Anton Dodonov
+      changes:
+        - createTable:
+            tableName: emails
+            columns:
+              - column:
+                  name: batch
+                  type: INTEGER
+              - column:
+                  name: email
+                  type: VARCHAR(256)
+              - column:
+                  name: count
+                  type: INTEGER
+        - createIndex:
+            columns:
+              - column:
+                  name: email
+            indexName: idx_email
+            schemaName: public
+            tableName: emails
+            unique: false
