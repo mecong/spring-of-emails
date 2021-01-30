@@ -1,6 +1,6 @@
 app:
   url-fetch-retry-count: 3
-  batch-timeout-minutes: 1
+  batch-timeout-minutes: 5
 
 spring:
   application.name: spring-emails
