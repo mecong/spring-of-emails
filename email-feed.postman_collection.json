@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "0f1a9eec-42a3-4063-bb10-881757eb36e2",
+		"name": "email-feed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "feed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version =\"1.0\"?>\n\n<dataset>\n\t<emails>\n\t\t<email>user1@comenon.com</email>\n        <email>user2@comenon.com</email>\n        <email>user3@comenon.com</email>\n        <email>user1@cherry.se</email>\n        <email>user2@wrong.se</email>\n        <email>user2@cherry.se</email>\n\t</emails>\n\t<resources>\n\t\t<url>http://localhost:8181/api</url>\n\t</resources>\n</dataset>\n"
+				},
+				"url": {
+					"raw": "http://localhost:{{port}}/SpringOfEmails/feed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"SpringOfEmails",
+						"feed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get emails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{port}}/SpringOfEmails/emails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"SpringOfEmails",
+						"emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{port}}/SpringOfEmails/emails/user3@comenon.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"SpringOfEmails",
+						"emails",
+						"user3@comenon.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByUrl",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8181/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
